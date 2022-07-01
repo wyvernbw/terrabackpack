@@ -39,4 +39,4 @@ jobs:
         run: deno lint
 
       - name: Compile
-        run: deno compile
+        run: deno compile setup.js && deno compile backup.js
