@@ -6,8 +6,7 @@ Deno.addSignalListener('SIGINT', () => {
 });
 
 async function input(question, default_value) {
-	const async_prompt = async (question) => prompt(question);
-	const value = await async_prompt(question);
+	const value = await prompt(question);
 	return value === null ? default_value : value;
 }
 

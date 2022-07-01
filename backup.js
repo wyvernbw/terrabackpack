@@ -10,7 +10,7 @@ const folders = ['Players', 'Worlds'];
 console.time('time elapsed');
 console.log('📋 copying files...');
 
-const backup = async () =>
+const backup = () =>
 	folders.forEach((element) => {
 		const base_path = path.join(config.backup_path, 'base', element);
 		const modded_path = path.join(config.backup_path, 'modded', element);
