@@ -4,19 +4,12 @@ const config_path = './config.json';
 const config = await JSON.parse(await Deno.readTextFile(config_path));
 
 fs.emptyDir(config.backup_path);
-// const backup_paths = {
-// 	base: [
-// 		path.join(config.backup_path, '/base/players'),
-// 		path.join(config.backup_path, '/base/worlds'),
-// 	],
-// 	tmodloader: [
-// 		path.join(config.backup_path, '/modded/players'),
-// 		path.join(config.backup_path, '/modded/worlds'),
-// 	],
-// };
+
 const folders = ['Players', 'Worlds'];
+
 console.time('time elapsed');
 console.log('📋 copying files...');
+
 const backup = async () =>
 	folders.forEach((element) => {
 		const base_path = path.join(config.backup_path, 'base', element);
