@@ -37,10 +37,10 @@ jobs:
 
             - name: Run linter
               run: deno lint
-	build:
-		runs-on: ${{ matrix.os }}
-		matrix: [ubuntu-latest, macOS-latest, windows-latest]
-		
-		steps:
-			- name: compile
-				run: deno compile setup.js && deno compile backup.js	
+    build:
+        runs-on: ${{ matrix.os }}
+        matrix: [ubuntu-latest, macOS-latest, windows-latest]
+
+        steps:
+            - name: compile
+              run: deno compile setup.js && deno compile backup.js
