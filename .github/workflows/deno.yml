@@ -53,7 +53,10 @@ jobs:
               with:
                   deno-version: v1.x
 
-            - name: Generate
-              uses: skx/github-action-build@master
+            - name: Generate artifacts
+              run: deno compile setup.js
+              run: deno compile backup.js
+              uses: actions/upload-artifact@v3
               with:
-                  builder: .github/build.sh
+                name: setup-script
+                path: setup
