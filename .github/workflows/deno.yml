@@ -8,6 +8,10 @@
 
 name: Deno
 
+- name: github-action-publish-binaries
+  uses: skx/github-action-publish-binaries@release-2.0
+
+
 on:
     push:
         branches: ['main']
@@ -53,5 +57,9 @@ jobs:
               with:
                   deno-version: v1.x
 
-            - name: compile
-              run: deno compile setup.js && deno compile backup.js
+            - name: Generate
+              uses: skx/github-action-build@master
+              with:
+                builder: deno compile
+
+
