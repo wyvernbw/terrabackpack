@@ -54,9 +54,10 @@ jobs:
                   deno-version: v1.x
 
             - name: Generate artifacts
-              run: deno compile setup.js
-              run: deno compile backup.js
+              run: deno compile setup.js && deno compile backup.js
+
+            - name: Upload artifacts
               uses: actions/upload-artifact@v3
               with:
-                name: setup-script
-                path: setup
+                  name: setup-script
+                  path: setup
