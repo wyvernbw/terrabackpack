@@ -54,7 +54,7 @@ jobs:
                   deno-version: v1.x
 
             - name: Generate artifacts
-              run: deno compile --out build/${{ matrix.os}} setup.js && deno compile --out build/${{ $matrix.os}} backup.js
+              run: deno compile --out build/${{ matrix.os}} setup.js && deno compile --out build/${{ matrix.os}} backup.js
 
             - name: Upload artifacts
               uses: actions/upload-artifact@v3
