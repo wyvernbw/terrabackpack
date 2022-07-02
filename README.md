@@ -29,8 +29,8 @@ deno task start
 You can run the scripts off github directly.
 
 ```
-deno run --allow-read --allow-write --allow-env https://raw.githubusercontent.com/wyvernbw/terraria-backup/main/index.js setup
-deno run --allow-read --allow-write https://raw.githubusercontent.com/wyvernbw/terraria-backup/main/index.js backup
+deno run --allow-read --allow-write --allow-env https://raw.githubusercontent.com/wyvernbw/terrabackpack/main/index.js setup
+deno run --allow-read --allow-write https://raw.githubusercontent.com/wyvernbw/terrabackpack/main/index.js backup
 ```
 
 ## Usage
