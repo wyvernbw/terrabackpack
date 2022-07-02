@@ -8,7 +8,7 @@ export async function makeBackup() {
 
 	const folders = ['Players', 'Worlds'];
 
-	console.time('time elapsed');
+	console.time('✨ time elapsed');
 	console.log('📋 copying files...');
 
 	const backup = () =>
@@ -34,7 +34,7 @@ export async function makeBackup() {
 			);
 		});
 	await backup();
-	console.timeEnd('time elapsed');
+	console.timeEnd('✨ time elapsed');
 
 	console.log('🦌 backup made!');
 }
