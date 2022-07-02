@@ -56,4 +56,4 @@ jobs:
             - name: Generate
               uses: skx/github-action-build@master
               with:
-                  builder: deno compile
+                  builder: .github/build.sh
