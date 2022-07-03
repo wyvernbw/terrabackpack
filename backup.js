@@ -8,7 +8,7 @@ export async function makeBackup() {
 
 	fs.emptyDir(config.backup_path);
 
-	const folders = ['Players', 'Worlds'];
+	const folders = ['Players', 'Worlds', 'ResourcePacks'];
 
 	console.time('✨ time elapsed');
 	console.log('📋 copying files...');
