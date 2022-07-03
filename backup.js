@@ -23,17 +23,13 @@ export async function makeBackup() {
 			);
 
 			// copy base game players and worlds
-			fs.copySync(path.join(config.game_path, element), base_path, {
+			fs.copy(path.join(config.game_path, element), base_path, {
 				overwrite: true,
 			});
 			// copy modded players and worlds
-			fs.copySync(
-				path.join(config.tmodloader_path, element),
-				modded_path,
-				{
-					overwrite: true,
-				}
-			);
+			fs.copy(path.join(config.tmodloader_path, element), modded_path, {
+				overwrite: true,
+			});
 		});
 	await backup();
 	console.timeEnd('✨ time elapsed');
