@@ -6,7 +6,7 @@ export async function makeBackup() {
 	console.log(config_path);
 	const config = await JSON.parse(await Deno.readTextFile(config_path));
 
-	fs.emptyDir(config.backup_path);
+	await fs.emptyDir(config.backup_path);
 
 	const folders = ['Players', 'Worlds', 'ResourcePacks'];
 
