@@ -1,7 +1,9 @@
 import { path, fs } from './deps.ts';
 
 export async function makeBackup() {
-	const config_path = './config.json';
+	const home_dir = Deno.env.get('HOME');
+	const config_path = path.join(home_dir, '.terrabackpack/config.json');
+	console.log(config_path);
 	const config = await JSON.parse(await Deno.readTextFile(config_path));
 
 	fs.emptyDir(config.backup_path);

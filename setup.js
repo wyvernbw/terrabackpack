@@ -1,4 +1,4 @@
-import { path } from './deps.ts';
+import { fs, path } from './deps.ts';
 
 async function input(question, default_value) {
 	const value = await prompt(question);
@@ -16,7 +16,8 @@ function writeJson(path, data) {
 
 export async function runSetup() {
 	const home_dir = Deno.env.get('HOME');
-	const config_path = './config.json';
+	const config_path = path.join(home_dir, '/.terrabackpack/config.json');
+	console.log(config_path);
 
 	const config = {
 		game_path: null,
@@ -47,6 +48,7 @@ export async function runSetup() {
 		default_backup_path
 	);
 
+	await fs.emptyDir(path.dirname(config_path));
 	writeJson(config_path, config);
 
 	console.log('🛠️  setup complete!');
