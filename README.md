@@ -26,6 +26,7 @@ deno task start
 
 ### Lazy mode (quick) 🚗💨
 
+**NOT RECOMMENDED**
 You can run the scripts off github directly.
 
 ```
