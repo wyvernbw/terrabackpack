@@ -51,5 +51,5 @@ export async function runSetup() {
 	await fs.emptyDir(path.dirname(config_path));
 	writeJson(config_path, config);
 
-	console.log('🛠️  setup complete!');
+	console.log('%c🛠️  setup complete!', 'color: green');
 }

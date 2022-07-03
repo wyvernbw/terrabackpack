@@ -33,5 +33,5 @@ export async function makeBackup() {
 	await backup();
 	console.timeEnd('✨ time elapsed');
 
-	console.log('🦌 backup made!');
+	console.log('%c🦌 backup made!', 'color: green');
 }
