@@ -1,6 +1,7 @@
 # 🦌 Terrabackpack
 
 Scripts to quickly backup your Terraria worlds and players.
+![img](screenshot.png)
 
 ## Install 😎
 
