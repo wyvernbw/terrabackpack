@@ -1,7 +1,0 @@
-{
-	"tasks": {
-		"start": "deno run --allow-read --allow-write setup.js && deno run --allow-read --allow-write backup.js",
-		"setup": "deno run --allow-read --allow-write setup.js",
-		"backup": "deno run --allow-read --allow-write backup.js"
-	}
-}
