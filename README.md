@@ -7,7 +7,7 @@ Deno 🦕 scripts to back up Terraria game files 🌲.
 You must have [deno](https://deno.land/) installed in order to use these scripts.
 
 ```bash
-deno install --allow-read --allow-env --allow-write -n tb https://github.com/wyvernbw/terrabackpack/blob/main/src/run.ts
+deno install --allow-read --allow-env --allow-write -n tb https://raw.githubusercontent.com/wyvernbw/terrabackpack/main/src/run.ts
 ```
 Once installed you can run the script with `tb`.
 ```bash
