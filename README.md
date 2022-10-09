@@ -1,6 +1,6 @@
 # 🦌 Terrabackpack
 
-<img src="https://raw.githubusercontent.com/wyvernbw/terrabackpack/main/screenshot.png" style="border-radius:1rem; display:flex;">
+<img src="https://raw.githubusercontent.com/wyvernbw/terrabackpack/main/screenshot.png" style="border-radius:1rem; display:block;">
 Deno 🦕 scripts to back up Terraria game files 🌲.
 
 ## Install 💚
