@@ -49,15 +49,16 @@ const setup = async () => {
 
 	const defaultPath = getDefaultPath();
 	const gamePath = prompt(
-		'Enter the path to your Terraria folder',
+		'🌿 Enter the path to your Terraria folder',
 		defaultPath
 	);
 	const backupPath = prompt(
-		'Enter the path to your backup folder',
+		'🌿 Enter the path to your backup folder',
 		join(defaultPath, 'Backups')
 	);
 	const configObj = JSON.stringify({ gamePath, backupPath });
 	await Deno.writeTextFile(configPath, configObj);
+	console.log('%c🦌 config setup complete!', 'color: green');
 };
 
 const set = async () => {
