@@ -3,8 +3,12 @@ import { join } from 'https://deno.land/std@0.149.0/path/mod.ts';
 import { assert } from 'https://deno.land/std@0.159.0/testing/asserts.ts';
 import { ensureFile } from 'https://deno.land/std@0.159.0/fs/mod.ts';
 import { z } from './deps.ts';
+import dir from 'https://deno.land/x/dir@1.5.1/mod.ts';
 
-const configPath = join(Deno.cwd(), 'tb_config.json');
+const configPath = join(
+	dir('config') ?? Deno.cwd(),
+	'/terrabackpack/tb_config.json'
+);
 
 const configSchema = z.object({
 	gamePath: z.string().min(1),
