@@ -1,7 +1,8 @@
 import { options as ConfigOptions } from './config.ts';
+import { options as BackupOptions } from './backup.ts';
 import { z } from './deps.ts';
 
-type Option = {
+export type Option = {
 	run?: () => unknown;
 	[key: string]: Option | (() => unknown) | undefined;
 };
@@ -12,6 +13,7 @@ export const Option: z.ZodType<Option> = z.lazy(() =>
 
 const options = {
 	config: ConfigOptions,
+	backup: BackupOptions,
 };
 
 const run = (opts: Option, index = 0) => {

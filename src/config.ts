@@ -1,8 +1,8 @@
+import { Option } from './run.ts';
 import os from 'https://deno.land/x/dos@v0.11.0/mod.ts';
 import { join } from 'https://deno.land/std@0.149.0/path/mod.ts';
 import { assert } from 'https://deno.land/std@0.159.0/testing/asserts.ts';
-import { ensureFile } from 'https://deno.land/std@0.159.0/fs/mod.ts';
-import { z } from './deps.ts';
+import { ensureFile, z } from './deps.ts';
 import dir from 'https://deno.land/x/dir@1.5.1/mod.ts';
 
 const configPath = join(
@@ -15,7 +15,7 @@ const configSchema = z.object({
 	backupPath: z.string().min(1),
 });
 
-const loadConfig = async () => {
+export const loadConfig = async () => {
 	await ensureFile(configPath);
 	const config = configSchema.safeParse(
 		JSON.parse((await Deno.readTextFile(configPath)) || '{}')
@@ -69,7 +69,7 @@ const set = async () => {
 	await Deno.writeTextFile(configPath, configObj);
 };
 
-export const options = {
+export const options: Option = {
 	setup: {
 		run: () => setup(),
 	},
