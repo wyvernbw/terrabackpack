@@ -64,8 +64,8 @@ const setup = async () => {
 const set = async () => {
 	const config = await loadConfig();
 	const validKeys = z.enum(['gamePath', 'backupPath']);
-	const key = validKeys.parse(Deno.args[1]);
-	const value = Deno.args[2];
+	const key = validKeys.parse(Deno.args[Deno.args.length - 2]);
+	const value = Deno.args[Deno.args.length - 1];
 	const configObj = JSON.stringify({ ...config, [key]: value });
 	await Deno.writeTextFile(configPath, configObj);
 };
